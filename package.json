@@ -1,0 +1,30 @@
+{
+  "name": "directories",
+  "version": "0.1.0",
+  "description": "",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "prepare": "npm run build",
+    "prebuild": "rm -rf lib",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielpza/directories-js.git"
+  },
+  "keywords": [],
+  "author": "Daniel Perez Alvarez <danielpza@protonmail.com> (https://github.com/danielpza)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danielpza/directories-js/issues"
+  },
+  "homepage": "https://github.com/danielpza/directories-js#readme",
+  "devDependencies": {
+    "@types/node": "^14.0.14",
+    "typescript": "^3.9.5"
+  }
+}
