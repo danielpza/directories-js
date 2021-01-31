@@ -13,6 +13,7 @@
     "build": "npm run build:cjs && npm run build:esm",
     "build:cjs": "tsc -m commonjs --outDir lib/cjs",
     "build:esm": "tsc -m es2020 --outDir lib/esm",
+    "release": "standard-version",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -36,6 +37,7 @@
   "homepage": "https://github.com/danielpza/directories-js#readme",
   "devDependencies": {
     "@types/node": "^14.0.14",
+    "standard-version": "^9.1.0",
     "typescript": "^3.9.5"
   }
 }
