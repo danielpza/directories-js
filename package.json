@@ -1,5 +1,5 @@
 {
-  "name": "directories",
+  "name": "directories-js",
   "version": "0.1.0",
   "description": "https://github.com/dirs-dev/directories-rs for javascript",
   "main": "lib/cjs/index.js",

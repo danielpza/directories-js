@@ -13,7 +13,7 @@ npm i https://github.com/danielpza/directories-js
 ## Usage
 
 ```typescript
-import { baseDirs, userDirs, projectDirs } from "directories";
+import { baseDirs, userDirs, projectDirs } from "directories-js";
 
 baseDirs.home();
 baseDirs.cache();
