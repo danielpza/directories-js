@@ -1,5 +1,33 @@
 import { homedir } from "os";
-import { envrel, homerel, isWin, isMac } from "./utils";
+import { readFileSync } from "fs";
+import { resolve } from "path";
+import {
+  envrel,
+  homerel,
+  isWin,
+  isMac,
+  parseUserDirs,
+  extraEnv,
+} from "./utils";
+import { baseDirs } from "./baseDirs";
+
+export function readUserDirs() {
+  if (isWin() || isMac()) {
+    return;
+  }
+  try {
+    const content = readFileSync(
+      resolve(baseDirs.config()!, "user-dirs.dirs")
+    ).toString();
+    const vars = parseUserDirs(content);
+    vars.forEach(([envVar, value]) => {
+      extraEnv[`XDG_${envVar}_DIR`] = homerel(value);
+    });
+  } catch (err) {
+    // should we log error or fail silently?
+    console.error(err);
+  }
+}
 
 type Resolver = () => string | null;
 
@@ -54,6 +82,8 @@ const userDirsLinux: UserDir = {
   template: () => envrel("XDG_TEMPLATES_DIR"),
   video: () => envrel("XDG_VIDEOS_DIR"),
 };
+
+readUserDirs();
 
 export const userDirs = isWin()
   ? userDirsWin
