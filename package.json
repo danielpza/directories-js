@@ -2,14 +2,17 @@
   "name": "directories",
   "version": "0.1.0",
   "description": "https://github.com/dirs-dev/directories-rs for javascript",
-  "main": "lib/index.js",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
   "files": [
     "lib"
   ],
   "scripts": {
     "prepare": "npm run build",
     "prebuild": "rm -rf lib",
-    "build": "tsc",
+    "build": "npm run build:cjs && npm run build:esm",
+    "build:cjs": "tsc -m commonjs --outDir lib/cjs",
+    "build:esm": "tsc -m es2020 --outDir lib/esm",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
