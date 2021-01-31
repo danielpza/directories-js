@@ -4,10 +4,12 @@ https://github.com/dirs-dev/directories-rs for javascript
 
 ## Installation
 
-not yet in npm packages, install from github:
-
 ```js
-npm i https://github.com/danielpza/directories-js
+# from npm
+npm install directories-js
+
+# or from github:
+npm install https://github.com/danielpza/directories-js
 ```
 
 ## Usage

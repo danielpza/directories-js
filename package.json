@@ -19,7 +19,15 @@
     "type": "git",
     "url": "git+https://github.com/danielpza/directories-js.git"
   },
-  "keywords": [],
+  "keywords": [
+    "base dirs",
+    "directories",
+    "home",
+    "linux",
+    "project dirs",
+    "user dirs",
+    "xdg"
+  ],
   "author": "Daniel Perez Alvarez <danielpza@protonmail.com> (https://github.com/danielpza)",
   "license": "MIT",
   "bugs": {
