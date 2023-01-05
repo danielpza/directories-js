@@ -1,6 +1,14 @@
 import { envrel, homerel, isMac, isWin } from "./utils";
 
-type Resolver = (project: string) => string | null;
+interface Project {
+  qualifier: string;
+  organization: string;
+  application: string;
+}
+
+type ProjectOrString = Project | string;
+
+type Resolver = (project: ProjectOrString) => string | null;
 
 interface ProjectDirs {
   cache: Resolver;
@@ -10,14 +18,6 @@ interface ProjectDirs {
   preference: Resolver;
   runtime: Resolver;
 }
-
-interface Project {
-  qualifier: string;
-  organization: string;
-  application: string;
-}
-
-type ProjectOrString = Project | string;
 
 export function projectToString({
   qualifier,
